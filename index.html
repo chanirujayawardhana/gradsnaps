@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GradSnaps — Graduation Photography</title>
+<link rel="icon" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+<nav id="nav"></nav>
+<header class="hero" id="hero"><div class="hbg" id="hbg"></div>
+  <img src="images/logo.png" alt="GradSnaps" style="width:min(520px,80vw)">
+  <p>Capturing your graduation memories with style 🤍📷</p>
+  <a class="btn solid" href="#packages">Book Your Session</a>
+</header>
+
+<section id="about" class="about">
+  <div>
+    <div class="eyebrow">About GradSnaps</div>
+    <h2>Your big day, beautifully remembered.</h2>
+    <p>GradSnaps is a graduation photography service made for the moment you’ve worked years to reach. From solo portraits to friends celebrating together, we capture soft, timeless images you’ll want to look back on forever.</p>
+    <p>Every package includes family &amp; friends photos, all soft copies, and a private online gallery for easy viewing and sharing.</p>
+  </div>
+  <div class="art">“Every graduate has a story. We frame it.”</div>
+</section>
+
+<section id="gallery">
+  <div class="eyebrow">Gallery</div>
+  <h2>Recent shoots</h2>
+  <div class="tabs" id="tabs"></div><div class="grid" id="grid"></div>
+  <div class="more"><a class="btn" id="more" href="gallery.html">See more</a></div>
+</section>
+
+<section class="pk" id="packages">
+  <div class="pk-in">
+    <div class="eyebrow">Packages</div>
+    <h2>Choose your session</h2>
+    <div class="cards">
+      <div class="card"><span class="n">01</span><h3>SOLO</h3><div class="pr">LKR 10,000</div>
+        <ul><li>Individual portraits</li><li>Family &amp; friends photos</li><li>All soft copies</li><li>1 hour session</li><li>Online gallery for viewing and sharing</li></ul>
+        <button class="btn" onclick="openBook('SOLO',10000)">Book Solo</button></div>
+      <div class="card"><span class="n">02</span><h3>DUO</h3><div class="pr">LKR 14,000</div>
+        <ul><li>2 graduates</li><li>Individual + couple photos</li><li>Family &amp; friends photos</li><li>All soft copies</li><li>1.5 hour session</li><li>Online gallery for viewing and sharing</li></ul>
+        <button class="btn" onclick="openBook('DUO',14000)">Book Duo</button></div>
+      <div class="card"><span class="n">03</span><h3>CREW</h3><div class="pr">LKR 6,000 / person</div>
+        <ul><li>Minimum 5 people</li><li>Individual + group photos</li><li>Family &amp; friends photos</li><li>All soft copies</li><li>Online gallery for viewing and sharing</li></ul>
+        <button class="btn" onclick="openBook('CREW',6000)">Book Crew</button></div>
+    </div>
+    <p class="adv">An advance payment of LKR 3,000 is required to confirm your booking. Pay by bank transfer and send us your payment slip when you book.</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="eyebrow">Reviews</div>
+  <h2>Kind words from graduates</h2>
+  <div class="rv" id="rv"></div>
+  <div class="more"><a class="btn" href="reviews.html">See all reviews</a></div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="cl">
+    <div class="eyebrow">Contact Us</div>
+    <h2>Let’s plan your shoot</h2>
+    <p>Phone: <a href="tel:+94761071584">076 107 1584</a></p>
+    <p>Email: <a id="emailLink" href="#"></a></p>
+    <div class="links">
+      <a href="https://www.facebook.com/share/1Gi53kYeHF/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.500h2.500l.5-3h-3V8.600c0-.9.300-1.500 1.600-1.500h1.600V4.200c-.3 0-1.200-.1-2.200-.1-2.300 0-3.800 1.400-3.800 3.900v2.500H8.200v3h2.500V21z"/></svg></a>
+      <a href="https://www.instagram.com/gradsnaps.lk/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://wa.me/94761071584" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linejoin="round"><path d="M3 21l1.600-4.800A8.500 8.500 0 1 1 8 19.400z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-1.500-2-1-1 .8c-1-.4-2-1.400-2.400-2.400l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+  </div>
+  <div>
+    <label>Your name</label><input id="cn">
+    <label>Your email</label><input id="ce" type="email">
+    <label>Message</label><textarea id="cm" rows="4"></textarea>
+    <button class="btn solid" style="margin-top:14px" onclick="sendMail()">Send Email</button>
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <span class="close" onclick="closeBook()">×</span>
+    <h3 id="mTitle">Book</h3>
+    <div class="sum" id="mSum"></div>
+    <label>Full name</label><input id="fn">
+    <label>Phone</label><input id="ph" type="tel">
+    <label>Email</label><input id="em" type="email">
+    <label>Preferred date</label><input id="dt" type="date">
+    <label>Time slot</label><select id="tm"></select><p class="avail" id="avail">Pick a date to see available times.</p>
+    <label>University</label><input id="un">
+    <label>Venue</label><input id="vn" placeholder="Where should we meet?">
+    <label>Notes</label><textarea id="nt" rows="3" placeholder="Anything we should know? (outfit, special shots, number of family members...)"></textarea>
+    <div id="crew" style="display:none"><label>Number of people (min 5)</label><input id="pp" type="number" min="5" value="5"></div>
+    <label style="margin-top:20px">Pay LKR 3,000 advance by bank transfer</label>
+    <div class="bank"><div><b>Commercial Bank</b><small>Chaniru Dinsara Jayawardhana</small>801 490 63 63</div><button onclick="cp('8014906363',this)">Copy</button></div>
+    <div class="bank"><div><b>BOC</b><small>Chaniru Dinsara Jayawardhana</small>0095825963</div><button onclick="cp('0095825963',this)">Copy</button></div>
+    <ol class="steps"><li>Transfer LKR 3,000 to either account.</li><li>Take a screenshot or photo of the payment slip.</li><li>Tap the button below, then attach your slip in the WhatsApp chat.</li></ol>
+    <p style="font-size:13px;color:var(--mute);margin:0">Your booking is confirmed once we receive the slip. The balance is settled on the day.</p>
+    <button class="btn solid" onclick="wa()">Send booking &amp; payment slip on WhatsApp</button>
+  </div>
+</div>
+
+
+<footer>© 2026 GradSnaps · Capturing graduation memories</footer>
+<script src="site-data.js"></script>
+<script src="site.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
